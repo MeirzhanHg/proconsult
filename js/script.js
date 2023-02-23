@@ -102,20 +102,19 @@ slides.forEach(slide => {
     slide.style.width = width;
 })
 
-// tabs[slideIndex - 1].style.backgroundColor = '#fff'
+
 tabs[slideIndex - 1].classList.add('dots__item-active');
 
 function slideActive(index) {
     tabs.forEach(tab => {
-        // tab.style.backgroundColor = 'rgba($color: #fff, $alpha: 0.3)'
         tab.classList.remove('dots__item-active')
     });
-    // tabs[index - 1].style.backgroundColor = '#fff'
     tabs[index - 1].classList.add('dots__item-active')
 }
 
 function deleteNotDigits(str) {
-    return +str.replace(/\D/g, '');
+    return Math.round(+str.slice(0, -2))
+    // return +str.replace(/\D/g, '');
 }
 
 tabs.forEach(tab => {
